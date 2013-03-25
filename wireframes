@@ -1,0 +1,17 @@
+Text wireframes
+
+Models
+	Ride
+		user:references
+		name:string
+		leader:string
+		length:integer
+		diffifulty:string
+		latitude:float
+		longitie:float
+		gmaps:boolean
+
+	User
+		name:string
+		email:string
+		password:string

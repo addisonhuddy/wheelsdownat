@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ridename: MyString
+  leader: MyString
+  length: 1
+  difficulty: MyString
+  latitude: 1.5
+  longitude: 1.5
+  gmaps: false
+  user: 
+
+two:
+  ridename: MyString
+  leader: MyString
+  length: 1
+  difficulty: MyString
+  latitude: 1.5
+  longitude: 1.5
+  gmaps: false
+  user: 

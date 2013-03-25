@@ -1,0 +1,18 @@
+<div class="row-fluid" id="down">
+  <div class="span12">
+    <div class="row-fluid">
+      <div class="span8">
+      	<%= image_tag("wheelsdown_main.png", :id => "headerimage") %>
+        <%= gmaps4rails(@json) %>
+      </div>
+      <div class="span4">
+      	<h4>Post a new ride</h4>
+      	<%= form_for @ride do |f| %>
+				  <%= f.label :ridename %> </br>
+				  <%= f.text_field :ridename %> </br>
+ 				 	<%= f.submit 'Create', class: "btn" %>
+				<% end %>
+      </div>
+    </div>
+  </div>
+</div>
