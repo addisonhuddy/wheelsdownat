@@ -21,6 +21,9 @@
 	text-align: center;
 }
 
-#headerimage {
-	margin-left: 40px;
+#map img { 
+  max-width: none;
 }
+#map label { 
+  width: auto; display:inline; 
+} 

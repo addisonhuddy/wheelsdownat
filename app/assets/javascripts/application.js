@@ -16,8 +16,47 @@
 //= require_tree .
 
 $(document).ready(function(){
-	$(".btn").click(function(){
-		alert("Saved");
-		return false;
-	});
+	var markersArray = [];
+	var lastMarker = null;
+	Gmaps.map.callback = function() {
+	    google.maps.event.addListener(Gmaps.map.serviceObject, 'click', function(event) {
+	    	clearOverlays();
+	    	$("#ride_latitude").val(event.latLng.Ya);
+	    	$("#ride_longitude").val(event.latLng.Za);
+	      placeMarker(event.latLng);
+	      // updateFormLocation(event.latLng);
+	    });
+	};
+
+	// Add a marker with an open infowindow
+  function placeMarker(latLng) {
+      var marker = new google.maps.Marker({
+          position: latLng, 
+          map: Gmaps.map.serviceObject,
+          draggable: true
+      });
+      markersArray.push(marker);
+      lastMarker = marker;
+      // Set and open infowindow
+      // var infowindow = new google.maps.InfoWindow({
+      //     content: '<div class="popup"><h2>Awesome!</h2><p>Drag me and adjust the zoom level.</p>'
+      // });
+      // infowindow.open(Gmaps.map.serviceObject,marker);
+      // Listen to drag & drop
+      // google.maps.event.addListener(marker, 'dragend', function() {
+      //     updateFormLocation(this.getPosition());
+      // });
+  };
+  // Removes the overlays from the map
+  function clearOverlays() {
+    // if (markersArray) {
+    //   for (var i = 0; i < markersArray.length; i++ ) {
+    //     markersArray[i].setMap(null);
+    //   }
+    // }
+    // markersArray.length = 0;
+    if (lastMarker){
+    	lastMarker.setMap(null);
+    }
+  };
 });

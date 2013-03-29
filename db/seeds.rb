@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Ride.create(ridename: "First Ride", state: "CA", city: "Redwood City")
+Ride.create(ridename: "Second Ride", state: "NV", city: "Las Vegas")
+Ride.create(ridename: "Third Ride", state: "OR", city: "Portland")
