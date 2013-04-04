@@ -12,6 +12,7 @@
  *= require_tree .
  */
 
+
 #down {
 	padding-top: 50px;
 }
@@ -27,3 +28,18 @@
 #map label { 
   width: auto; display:inline; 
 } 
+
+.ridelist {
+	line-height: 2px;
+}
+
+li p {
+	padding: 0;
+  margin: 0;
+}
+
+img {
+	display: block;
+	width: 940px;
+	margin: auto;
+}

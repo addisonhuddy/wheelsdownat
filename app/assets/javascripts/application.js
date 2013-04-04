@@ -37,16 +37,8 @@ $(document).ready(function(){
       });
       markersArray.push(marker);
       lastMarker = marker;
-      // Set and open infowindow
-      // var infowindow = new google.maps.InfoWindow({
-      //     content: '<div class="popup"><h2>Awesome!</h2><p>Drag me and adjust the zoom level.</p>'
-      // });
-      // infowindow.open(Gmaps.map.serviceObject,marker);
-      // Listen to drag & drop
-      // google.maps.event.addListener(marker, 'dragend', function() {
-      //     updateFormLocation(this.getPosition());
-      // });
   };
+  
   // Removes the overlays from the map
   function clearOverlays() {
     // if (markersArray) {

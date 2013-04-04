@@ -8,4 +8,16 @@ class Ride < ActiveRecord::Base
 	  "#{latitude}, #{longitude}"
 	end
 
+	def gmaps4rails_infowindow
+    "
+    <strong>#{self.ridename}</strong>
+    <ul>
+	  	<li><p>Length: #{self.length}miles</p></li>
+	    <li><p>Date: #{self.date}</p></li>
+	    <li><p>Wheelsdown At: #{self.time}</p></li>
+	    <li><p>Notes: #{self.difficulty}</p></li>
+		</ul>
+    "
+  end
+
 end

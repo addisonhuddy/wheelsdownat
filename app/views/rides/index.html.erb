@@ -2,32 +2,39 @@
   <div class="span12">
     <%= image_tag("wheelsdown_main.png") %>
     <div class="row-fluid">
-      <div class="span8">
+      <div class="span9">
         <%= gmaps4rails(@rides_gmails) %>
         <h3>Great Rides Tomorow</h3>
-        <% @rides.each do |ride| %>
-          <%= ride.ridename %>,
-          <%= ride.state %><br/>
-          <hr>
-        <% end %>
+        <div id="ridelist"> 
+          <% @rides.each do |ride| %>
+            <div id="ride-<%= ride.id %>">
+              <h5><%= ride.ridename %> <%= link_to "| Delete", ride_path(ride) , :method => :delete, :remote => true %> </h5> <br>
+              <p>
+                <%= ride.length %>miles  | 
+                <%= ride.date %> | 
+                <%= ride.time %> | 
+                <%= ride.difficulty %>
+              </p>
+              <hr>
+            </div>
+          <% end %>
+        </div>
       </div>
-
-      <div class="span4">
-          <%= form_for @new_ride do |f| %>
-            <%= f.hidden_field :latitude %>
-            <%= f.hidden_field :longitude %>
-            <%= f.label :ridename %> 
-            <%= f.text_field :ridename %> 
-            <%= f.label :difficulty %>
-            <%= f.text_field :difficulty %>
-            <%= f.label :length %>
-            <%= f.text_field :length %>
-            <%= f.label :date %>
-            <%= f.text_field :date %>
-            <%= f.label :time %>
-            <%= f.text_field :time %>
-            <br>
-         <%= f.submit "Create Ride" %>
+      <div class="span3">
+        <%= form_for @new_ride do |f| %>
+          <%= f.hidden_field :latitude %>
+          <%= f.hidden_field :longitude %>
+          <%= f.label :ridename, "Ride Name" %> 
+          <%= f.text_field :ridename, placeholder: "Ring of fire climb" %> 
+          <%= f.label :length, "Length" %>
+          <%= f.text_field :length, placeholder:"in miles" %>
+          <%= f.label :date, "Date" %>
+          <%= f.text_field :date, placeholder: "9/2/2013" %>
+          <%= f.label :time, "Wheelsdown" %>
+          <%= f.text_field :time, placeholder: "9:00am" %>
+          <%= f.label :difficulty, "Notes" %>
+          <%= f.text_area :difficulty, placeholder: "Ride meets at the corner of 5th and Main near the Peet's Coffee", size: "200" %>
+          <%= f.submit "Save Ride", class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
