@@ -43,3 +43,13 @@ img {
 	width: 940px;
 	margin: auto;
 }
+
+#rideform {
+	display: none;
+}
+
+#clicktopost {
+	text-align: center;
+	margin-top: 200px;
+}
+

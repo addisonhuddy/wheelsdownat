@@ -10,8 +10,8 @@ class RidesController < ApplicationController
   def create
     @ride = Ride.new(params[:ride])
     if @ride.save
-    	flash[:notice] = "Saved the ride."
-    	redirect_to rides_path
+      @ride_id = @ride.id
+    	respond_with(@ride_id)
     else
     	flash[:error] = "Error saving the ride."
     	redirect_to rides_path
