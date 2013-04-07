@@ -2,8 +2,6 @@ Wheelsdownat::Application.routes.draw do
 
   root :to => 'rides#index'
 
-  resources :users
-
   resources :rides, only: [:index, :create, :destroy, :update]
 
   # The priority is based upon order of creation:

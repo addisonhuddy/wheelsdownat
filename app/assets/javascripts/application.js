@@ -23,8 +23,7 @@ $(document).ready(function(){
 	    	clearOverlays();
 	    	$("#ride_latitude").val(event.latLng.Ya);
 	    	$("#ride_longitude").val(event.latLng.Za);
-        $("#clicktopost").fadeOut(500);
-        $("#rideform").fadeIn(1500);
+        $("#rideform").fadeIn(500);
 	      placeMarker(event.latLng);
 	      // updateFormLocation(event.latLng);
 	    });

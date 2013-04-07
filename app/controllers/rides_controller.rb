@@ -8,13 +8,14 @@ class RidesController < ApplicationController
   end
 
   def create
-    @ride = Ride.new(params[:ride])
-    if @ride.save
-      @ride_id = @ride.id
-    	respond_with(@ride_id)
-    else
-    	flash[:error] = "Error saving the ride."
-    	redirect_to rides_path
+  before_filter :authenticate_user!
+  @ride = Ride.new(params[:ride])
+   if @ride.save
+    @ride_id = @ride.id
+   	redirect_to rides_path
+   else
+     flash[:error] = "Error saving the ride."
+     redirect_to rides_path
     end
   end
 
