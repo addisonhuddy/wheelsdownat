@@ -18,15 +18,15 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="#">Wheelsdown.At</a>
+            <a class="brand" href="/rides#index">Wheelsdown.At</a>
             <div class="nav-collapse collapse">
               <p class="navbar-text pull-right">
-                Hi, Addison<a href="#" class="navbar-link"></a>
+                <% if user_signed_in? %>
+                  <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: "btn btn-small btn-inverse"  %>
+                <% else %>
+                  <%= link_to "Sign In", new_user_session_path, class: "btn btn-small btn-inverse" %> 
+                <% end %>            
               </p>
-              <ul class="nav">
-                <li class="active"><a href="#">About</a></li>
-                <li><a href="#about">Suggest A New Feature</a></li>
-              </ul>
             </div><!--/.nav-collapse -->
           </div>
         </div>
@@ -44,7 +44,8 @@
     	<%= yield :scripts %>
     	<div class="footer" id="footer">
         <div class="container">
-          <p>Copywrite © 2013 Wheelsdown.At</p>
+          <%= link_to "About", "ride#about" %>
+          <p>Copywrite © 2013 Wheelsdown.At</p?
        </div>
       </div>
     </footer>

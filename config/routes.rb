@@ -1,8 +1,12 @@
 Wheelsdownat::Application.routes.draw do
-
-  root :to => 'rides#index'
+  
+  devise_for :users
 
   resources :rides, only: [:index, :create, :destroy, :update]
+
+  get "/:about" => "rides#about"
+
+  root :to => 'rides#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -8,7 +8,6 @@ class RidesController < ApplicationController
   end
 
   def create
-  before_filter :authenticate_user!
   @ride = Ride.new(params[:ride])
    if @ride.save
     @ride_id = @ride.id

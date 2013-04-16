@@ -1,4 +1,6 @@
 class Ride < ActiveRecord::Base
+  has_many :users
+
   attr_accessible :difficulty, :gmaps, :latitude, :leader, :length, :longitude, :ridename, :time, :date, :state, :city
 
   acts_as_gmappable
